@@ -42,16 +42,28 @@ fields.forEach((field) => {
       validatePasswordMatch();
     }
   });
+});
 
-  form.addEventListener("submit", (event) => {
+form.addEventListener("submit", (event) => {
+  let isFormValid = true;
+
+  fields.forEach((field) => {
+    const input = document.getElementById(field.id);
+    const error = document.querySelector(`#${field.id} + span.error`);
+
     if (!input.validity.valid) {
       showError(input, error, field);
-      event.preventDefault();
-    }
-    if (field.id === "password" || field.id === "confirmPassword") {
-      validatePasswordMatch();
+      isFormValid = false;
     }
   });
+
+  if (!isFormValid) {
+    event.preventDefault();
+    return;
+  }
+
+  alert("High five! Form submitted successfully!");
+  // You can add other actions here upon successful submission
 });
 
 function showError(input, error, field) {
