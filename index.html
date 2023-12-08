@@ -4,6 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Browser Form</title>
+    <script src="script.js" defer></script>
+    <link href="style.css" rel="stylesheet" />
   </head>
-  <body></body>
+  <body>
+    <header>Browser Form</header>
+    <form novalidate>
+      <p>
+        <label for="mail">
+          <span>Email address:</span>
+          <input type="email" id="mail" name="mail" required minlength="8" />
+          <span class="error" aria-live="polite"></span>
+        </label>
+      </p>
+      <p>
+        <label for="country">
+          <span>Country:</span>
+          <input id="country" name="country" type="text" required />
+          <span class="error" aria-live="polite"></span>
+        </label>
+      </p>
+      <p>
+        <label for="zip">
+          <span>Zip Code:</span>
+          <input id="zip" name="zip" type="number" required />
+          <span class="error" aria-live="polite"></span>
+        </label>
+      </p>
+      <p>
+        <label for="password">
+          <span>Password:</span>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            required
+            minlength="8"
+          />
+          <span class="error" aria-live="polite"></span>
+        </label>
+      </p>
+      <p>
+        <label for="confirmPassword">
+          <span>Confirm Password:</span>
+          <input
+            id="confirmPassword"
+            name="confirmPassword"
+            type="password"
+            required
+            minlength="8"
+          />
+          <span class="error" aria-live="polite"></span>
+        </label>
+      </p>
+
+      <button>Submit</button>
+    </form>
+  </body>
 </html>
